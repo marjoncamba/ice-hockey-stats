@@ -19,9 +19,11 @@
     "typecheck": "tsc --noEmit",
     "format:write": "prettier --write \"**/*.{ts,tsx,mdx}\" --cache",
     "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache",
-    "cy:open": "cypress open",
-    "cy:e2e": "cypress run --e2e",
-    "cy:component": "cypress run --component"
+    "test:e2e": "start-server-and-test dev http://localhost:3000 \"cypress open --e2e\"",
+    "test:e2e:headless": "start-server-and-test dev http://localhost:3000 \"cypress run --e2e\"",
+    "test:component": "cypress open --component",
+    "test:component:headless": "cypress run --component",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@commitlint/cli": "^17.6.7",
